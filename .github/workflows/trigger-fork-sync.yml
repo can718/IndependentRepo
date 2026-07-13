@@ -1,0 +1,23 @@
+name: Trigger Fork Sync Upstream
+
+on:
+  schedule:
+    # 每天 UTC 06:15 执行，对应北京时间 14:15
+    - cron: '15 6 * * *'
+  workflow_dispatch: # 也支持手动触发，方便测试
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call sync workflow in your Fork repo
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          # 你的 Fork 仓库全名：can718/PSAppDeployToolkit
+          repo: can718/PSAppDeployToolkit
+          # 要触发的 workflow 名称（和你 Fork 里的 name 字段一致）
+          workflow: "Sync Upstream"
+          # 触发 main 分支上的 workflow
+          ref: main
+          # 用你配置的 PAT 来调用 API
+          token: ${{ secrets.FORK_TRIGGER_PAT }}
