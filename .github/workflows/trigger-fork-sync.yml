@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Call sync workflow in your Fork repo
-        uses: benc-uk/workflow-dispatch@v1.2.0
+        uses: benc-uk/workflow-dispatch@v1
         with:
           repo: can718/PSAppDeployToolkit
           workflow: "Sync Upstream"
