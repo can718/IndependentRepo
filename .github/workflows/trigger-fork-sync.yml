@@ -2,7 +2,8 @@ name: Trigger Fork Sync Upstream
 
 on:
   schedule:
-    - cron: '0 0 * * *' # UTC 07:30 → 北京时间 15:30
+    # 避开整点/半点以降低被 GitHub 延迟或丢弃的概率
+    - cron: '32 9 * * *' # UTC 09:32 → 北京时间 17:32
   workflow_dispatch:
 
 jobs:
