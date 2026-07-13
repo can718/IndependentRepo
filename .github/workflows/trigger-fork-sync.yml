@@ -3,7 +3,7 @@ name: Trigger Fork Sync Upstream
 on:
   schedule:
     # 每天 UTC 06:15 执行，对应北京时间 14:15
-    - cron: '15 6 * * *'
+    - cron: '15 7 * * *'
   workflow_dispatch: # 也支持手动触发，方便测试
 
 jobs:
