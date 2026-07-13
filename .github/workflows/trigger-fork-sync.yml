@@ -2,7 +2,7 @@ name: Trigger Fork Sync Upstream
 
 on:
   schedule:
-    - cron: '*/10 * * * *' # UTC 07:30 → 北京时间 15:30
+    - cron: '0 0 * * *' # UTC 07:30 → 北京时间 15:30
   workflow_dispatch:
 
 jobs:
